@@ -11,3 +11,9 @@
 - **흐름은 항상 connect → cursor → execute → (commit) → fetch → close**. INSERT/UPDATE/DELETE는 `commit()` 없으면 저장 안 됨. 서버 안에선 요청마다 함수 **안에서** 열고 꼭 `close()`.
 - **fetchone()은 없으면 None** (JS의 null). 그래서 `if row is None: 404`. 원소 1개 튜플은 `(2,)` 쉼표 필수, `(2)`는 그냥 숫자. SELECT 결과 기본은 튜플이라 `row[1]`로 꺼내야 함.
 - 다음 할 일: `conn.row_factory = sqlite3.Row` + `[dict(row) for row in rows]`로 `/pcs` 응답을 `{"id":1,"name":"mac"}` 모양으로 바꾸기. 그다음 GET /pcs/{id}, POST 순서로 DB화.
+
+## 2026-11-03 — 로드맵 개정 (코딩 없음)
+- **학습법 전환**: 빈칸 채우기 폐기. Claude가 코드 짜고 나는 읽고 질문 답하기. 직접 치는 건 단계당 수정 1개. 근거: 공식 가이드들 공통 "코스 1개 + 깨지는 프로젝트 2~3개 + evals/배포".
+- **12주 로드맵 확정** (ROADMAP.md): CRUD → Claude SDK 직접 → tool use/에이전트 루프 → MCP → RAG → 자동화·evals → Docker 배포. 수학·파인튜닝 스킵. 채용공고 필수 = Python·LLM·RAG·API·모니터링.
+- **주제 = 내 실제 업무**: 콘솔PC → 원격으로 각 PC 들어가 용량·캡쳐 받아적고 PPT 결재. 구조: 각 PC 수집 스크립트 → FastAPI 서버+DB → LLM 요약/이상탐지 → PPT 자동 생성. 공부할 땐 맥에서 가짜 PC 스크립트로 시뮬레이션.
+- 다음 할 일: PC마다 실제로 기록하는 항목(드라이브별 용량? 백업 성공/실패? 캡쳐?) 알려주기 → 그걸로 SQLModel `Pc` 모델 + CRUD 4개 작성.

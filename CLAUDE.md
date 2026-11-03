@@ -25,5 +25,5 @@
 ## 현재 진도
 - 2026-11-01: 1주차(구 로드맵) 완료. GET/POST, pydantic, 404/422.
 - 2026-11-02: sqlite3 기본 (CREATE/INSERT/SELECT, fetchone/None, commit). GET /pcs를 DB 조회로 교체.
-- 2026-11-03: 로드맵 개정(ROADMAP.md). git init + GitHub 레포. **새 1주차 시작**: SQLModel로 CRUD 전환.
-- 다음 할 일: SQLModel 설치 → `models.py`(Pc 테이블) → CRUD 4개 → `.env` → router 분리.
+- 2026-11-03: 로드맵 개정(ROADMAP.md). git init + GitHub 공개 레포(Namgyeon/backup-log-agent). 주제 확정: 학습자 실제 업무(원격 PC 용량·캡쳐 수집 → PPT 결재) 자동화. 코딩은 안 함.
+- 다음 할 일: **먼저 학습자에게 PC별 실제 기록 항목 묻기** → SQLModel 설치 → `models.py`(Pc 테이블) → CRUD 4개 → `.env` → router 분리. 학습 세션은 밤 11:30 전에 끝낸다.
